@@ -1,2 +1,2 @@
 # EasyFs
-web interface that manages freeswitch
+web interface that manages some fonction of freeswitch
