@@ -1,0 +1,161 @@
+<?php
+
+### Mysql
+$db_type = 'mysql';
+$db_host = 'localhost';
+$db_port = '3306';
+$db_user = 'root';
+$db_pass = 'mysqlPFE';
+$db_name = 'freeswitchcdr';
+$db_table_name = 'cdr';
+$db_options = array();
+$db_options = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
+
+### Максимальное количество записей для вывода ('LIMIT')
+$db_result_limit = '100';
+
+### Количество записей, после которых снова будет показана шапка (дата статус...)
+$h_step = 30;
+
+### Название столбца в БД, в котором хранится название записи звонка
+$system_column_name = 'recordingfile';
+
+### Формат хранения файлов записей Asterisk
+## Если 1, то файлы записей должны распределяться скриптом по папкам в соответствии с датой "/var/calls/2015/2015-01/2015-01-01". 
+# Записи за сегодня находятся в "/var/calls", записи за прошедшие даты в папках в соответствии с датой "/var/calls/2015/2015-01/2015-01-01"
+
+## Если 2, то файлы записей должны распределяться скриптом по папкам в соответствии с датой "/var/calls/2015/12/01".
+# Записи за сегодня находятся в "/var/calls", записи за прошедшие даты в папках в соответствии с датой "/var/calls/2015/12/01"
+
+## Если 3, то файлы записей должны распределяться по папкам Asterisk-ом в соответствии с датой "/var/calls/2015/2015-01/2015-01-01".
+# Записи за все даты находятся в папках в соответствии с датой "/var/calls/2015/2015-01/2015-01-01"
+
+## Если 4, то файлы записей должны распределяться по папкам Asterisk-ом в соответствии с датой "/var/calls/2015/12/01".
+# Записи за все даты находятся в папках в соответствии с датой "/var/calls/2015/12/01"
+
+## Если др. значение, то все записи хранятся в одной папке (/var/calls)
+$system_storage_format = 0;
+
+### Папка, где находятся записи Asterisk
+$system_monitor_dir = '/mnt/ATS'; // без слеша на конце
+
+### Размер файла в Килобайтах, больше которого считается, что файл существует
+$system_fsize_exists = '0';
+
+### Папка для временных файлов
+$system_tmp_dir = '/tmp';
+
+### Формат аудио, в котором записываются записи звонков
+# Плеер не воспроизводит WAV формат!
+$system_audio_format = 'mp3';
+
+### Если записи звонков / факсов через некоторое время архивируются, раскомментировать строку ниже и указать формат архива (zip gz rar bz2 и т.д.)
+# Имя архива должно быть = имя_файла.mp3.$system_archive_format (имя_файла.mp3.zip)
+//$system_archive_format = 'zip';
+
+### Плагины
+# Название плагина => имя файла
+####$plugins = array('Расход средств' => 'my_callrates');
+
+### Тарифы на звонки
+# Нетарифицируемый интервал в секундах
+####$callrate_free_interval = 3;
+# Имя файла с тарифами
+####$callrate_csv_fileName = 'gen_callrates.csv';
+# Путь к файлу с тарифами, также этот путь прописан в настройках плагина
+####$callrate_csv_file = dirname(__FILE__) . '/plugins/' . $callrate_csv_fileName;
+####$callrate_currency = '';
+# Массив путей к файлам с тарифами -> array('/var/tarif1.csv', '/var/tarif2.csv', '/var/tarif3.csv');
+####$callrate_cache = array();
+
+### URL сервиса информации о номере
+# Где "%n" будет заменено на номер телефона
+$rev_lookup_url = '' . '%n';
+# Минимальная длина номер, для которого будет подставлен URL с инфо о номере
+$rev_min_number_len = 7;
+
+### Включение / Отключение показа условий поиска и типов отчетов
+## Если 1 - показать, 0 - скрыть
+$display_search = array();
+# Показ типа отчета - Параллельные звонки
+$display_search['chart_cc'] = 0;
+# Показ типа отчета - ASR и ACD (Коэффициент отвеченных вызовов / Средняя продолжительность вызова)
+$display_search['asr_report'] = 0;
+# Показ условия поиска - Входящий канал
+$display_search['channel'] = 0;
+# Показ условия поиска - Имя звонящего
+$display_search['clid'] = 0;
+# Показ условия поиска - DID (Внешний номер)
+$display_search['did'] = 0;
+# Показ условия поиска - Исходящий канал
+$display_search['dstchannel'] = 0;
+# Показ условия поиска - Код аккаунта
+$display_search['accountcode'] = 0;
+# Показ условия поиска - Описание (userfield)
+$display_search['userfield'] = 1;
+# Показ условия поиска - Приложение
+$display_search['lastapp'] = 0;
+
+### Включение / Отключение показа некоторых колонок
+## Если 1 - показать, 0 - скрыть
+$display_column = array();
+$display_column['clid'] = 1;
+$display_column['accountcode'] = 0;
+$display_column['extension'] = 0;
+# Показ направления звонка
+$display_column['callrates_dst'] = 0;
+
+### Показать Исх. / Вх. канал полностью
+# В колонках Исх. канал и Вх. канал, Например, вместо "SIP" будет показано "SIP/123"
+# Если 1 - показать, 0 - скрыть
+$display_full_channel = 0;
+
+### CDN
+# Если CDN не используется, то закомментировать $cdn_addr
+//$cdn_addr = ''; // без слеша на конце
+//$cdn_css_tooltip = $cdn_addr . '/simptip.min.css';
+
+### Настройки сайта
+# Meta - Title
+$site_title = 'Configuration d&acute;appel';
+# Meta - Description
+$site_desc = 'Configuration d&acute;appel';
+# Meta - Robots
+$site_robots = 'noindex, nofollow';
+# Текст в шапке
+$site_head = 'Configuration d&acute;appel';
+# Путь к основному разделу сайта
+# Чтобы стрелка (рядом с текстом в шапке) не показывалась, закомментировать строчку ниже или задать значение ''
+$site_gen_section = '../';
+
+### Имена пользователей, которым разрешен доступ
+# $admin_user_names = 'admin1,admin2,admin3';
+# Если $admin_user_names = '*'; - разрешено всем
+$admin_user_names = '*';
+
+
+
+// Имя пользователя
+$cdr_user_name = getenv('REMOTE_USER');
+
+if ( strlen($cdr_user_name) > 0 ) {
+	$is_admin = strpos(",$admin_user_names,", ",$cdr_user_name,");
+	if ( $admin_user_names == '*' ) {
+		$cdr_user_name = '';
+	} elseif ( isset($_REQUEST['action']) && $_REQUEST['action'] == 'logout' ) {
+		header('Status: 401 Unauthorized');
+		header('WWW-Authenticate: Basic realm="Asterisk"');
+		exit;
+	} elseif ( $is_admin !== false ) {
+		$cdr_user_name = '';
+	}
+}
+
+/* load Plugins */
+if (isset($plugins) && $plugins) {
+	foreach ( $plugins as $p_val ) {
+		require_once "inc/plugins/$p_val.inc.php";
+	}
+}
+
+

@@ -1,0 +1,133 @@
+élément {
+}
+#main_content {
+    padding: 8px;
+}
+#main_content {
+    display: inline-block;
+    width: 100%;
+    background: #ffffff;
+    background-attachment: fixed;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -khtml-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-box-shadow: 0 1px 4px #000000;
+    -moz-box-shadow: 0 1px 4px #000000;
+    box-shadow: 0 1px 4px #999900;
+    padding: 20px;
+    margin-top: 65px;
+    text-align: left;
+    color: #5f5f5f;
+    font-size: 12px;
+    font-family: arial;
+}
+*::placeholder {
+    color: #999999;
+    opacity: 1.0;
+}
+*::-moz-placeholder {
+    color: #999999;
+    opacity: 1.0;
+}
+*::after, *::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.vtable {
+    background: #ffffff;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    -khtml-border-radius: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+    border-bottom: 1px solid #e5e9f0;
+    padding: 6px;
+    text-align: left;
+    vertical-align: middle;
+    color: #666666;
+    font-family: Arial;
+    font-size: 8pt;
+}
+.vncellreq {
+    background: #7da6ff;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -khtml-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    border-right: 3px solid #a2bfff;
+    border-bottom: 1px solid #ffffff;
+    padding: 7px 8px;
+    text-align: right;
+    color: #000000;
+    font-family: Arial;
+    font-size: 9pt;
+    font-weight: bold;
+    vertical-align: top;
+}
+td {
+    color: #5f5f5f;
+    font-size: 12px;
+    font-family: arial;
+}
+td, th {
+    padding: 0;
+}
+textarea.txt:hover, input.txt[type="text"]:hover, input.txt[type="number"]:hover, input.txt[type="password"]:hover, label.txt:hover, textarea.formfld:hover, input.formfld[type="text"]:hover, input.formfld[type="number"]:hover, input.formfld[type="password"]:hover, label.formfld:hover {
+    border-color: #c0c0c0;
+}
+textarea.txt, input.txt[type="text"], input.txt[type="number"], input.txt[type="password"], textarea.formfld, input.formfld[type="text"], input.formfld[type="number"], input.formfld[type="password"] {
+    transition: width 0.25s;
+    -moz-transition: width 0.25s;
+    -webkit-transition: width 0.25s;
+    max-width: 500px;
+}
+select.txt, textarea.txt, input.txt[type="text"], input.txt[type="number"], input.txt[type="password"], label.txt, select.formfld, textarea.formfld, input.formfld[type="text"], input.formfld[type="number"], input.formfld[type="password"], label.formfld {
+    font-family: Arial;
+    font-size: 12px;
+    color: #000000;
+    text-align: left;
+    height: 28px;
+    padding: 4px 6px;
+    margin: 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c0c0c0;
+    background: #ffffff;
+    -webkit-box-shadow: 0 0 3px #cddaf0 inset;
+    -moz-box-shadow: 0 0 3px #cddaf0 inset;
+    box-shadow: 0 0 3px #cddaf0 inset;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -khtml-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    vertical-align: middle;
+}
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #3f3;
+}
+table {
+		border-collapse : separate;
+		border-spacing :0 ;
+}
